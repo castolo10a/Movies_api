@@ -6,4 +6,4 @@ charactersRouter.get('/', (req, res) => {
     res.status(200).send('estoy en characters')
 })
 
-module.exports = charactersRouter
+module.exports = { charactersRouter }
