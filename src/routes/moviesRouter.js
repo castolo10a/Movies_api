@@ -1,9 +1,9 @@
 const {Router} = require('express');
+const { getMoviesHandler, getMovieHandlerById } = require('../handlers/moviesHandler')
 
 const moviesRouter = Router();
 
-moviesRouter.get('/', (req, res) => {
-    res.status(200).send('estoy en movies')
-})
+moviesRouter.get('/', getMoviesHandler);
+moviesRouter.get('/:id', getMovieHandlerById);
 
 module.exports = { moviesRouter }

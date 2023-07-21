@@ -1,9 +1,8 @@
 const {Router} = require('express');
+const { getCharacterHandlerById } = require('../handlers/charactersHandler')
 
 const charactersRouter = Router();
 
-charactersRouter.get('/', (req, res) => {
-    res.status(200).send('estoy en characters')
-})
+charactersRouter.get('/:id', getCharacterHandlerById);
 
 module.exports = { charactersRouter }

@@ -3,7 +3,6 @@ const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, API_KEY } = process.env;
 const movieModel = require('./models/Movie');
 const userModel = require('./models/User');
-const characterModel = require('./models/Character')
 
 // DB_DEPLOY
 
@@ -20,7 +19,6 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 
 movieModel(sequelize);
 userModel(sequelize);
-characterModel(sequelize);
 
 // Para relacionarlos hacemos un destructuring
 const { User, Movie, Character } = sequelize.models;
@@ -35,16 +33,6 @@ Movie.belongsToMany(User, {
   through: 'UserMovie',
   timestamps: false
 });
-Character.belongsToMany(Movie, {
-  through: 'CharacterMovie',
-  timestamps: false
-});
-Movie.belongsToMany(Character, {
-  through: 'CharacterMovie',
-  timestamps: false
-});
-
-
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
