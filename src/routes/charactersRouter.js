@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { getCharacterHandlerById } = require('../handlers/charactersHandler')
+const { getCharacterHandlerById } = require('../handlers/Characters/getCharacterHandlerById')
 
 const charactersRouter = Router();
 

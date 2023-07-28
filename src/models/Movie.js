@@ -37,6 +37,10 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true
     },
+    Characters: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: true
+    },
     isFav: {
       type: DataTypes.BOOLEAN,
       defaultValue: false

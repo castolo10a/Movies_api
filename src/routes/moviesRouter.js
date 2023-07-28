@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { getMoviesHandler, getMovieHandlerById } = require('../handlers/moviesHandler')
+const { getMoviesHandler, getMovieHandlerById } = require('../handlers/Movies/index')
 
 const moviesRouter = Router();
 
