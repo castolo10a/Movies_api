@@ -1,6 +1,13 @@
-const getUserHandlerById = (req, res) => {
+const {getUserById} = require("../../controllers/Users/getUserById")
+
+const getUserHandlerById = async (req, res) => {
     const {id} = req.params
-    res.status(200).send(`detalle del usuario ${id}`)
+    try {
+        const idUser = await getUserById(id);
+        res.status(200).json(idUser)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 };
 
 module.exports = {
