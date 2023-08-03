@@ -17,13 +17,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_added: {
+    release_date: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    deck:{
-      type: DataTypes.TEXT,
-      allowNull: true,
     },
     description: {
         type: DataTypes.TEXT,
@@ -37,7 +33,11 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true
     },
-    Characters: {
+    characters: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: true
+    },
+    concepts:{
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: true
     },
